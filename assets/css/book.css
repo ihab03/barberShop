@@ -1,0 +1,147 @@
+.booking-page-wrapper {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 5%;
+    background: radial-gradient(circle at bottom right, #1a1a1a 0%, var(--bg-dark) 100%);
+}
+
+.modern-booking-container {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    background: linear-gradient(145deg, #1e1e1e, #141414);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    overflow: hidden; 
+}
+
+
+.booking-info {
+    flex: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(18, 18, 18, 0.9)), url('../Images/booking.png') center/cover;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.booking-info h2 {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.booking-info p {
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.perks-list {
+    list-style: none;
+    color: #aaa;
+}
+
+.perks-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.perks-list i {
+    font-size: 1.2rem;
+    width: 30px;
+}
+
+
+
+
+.booking-form-area {
+    flex: 1.2;
+    padding: 4rem;
+    background-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #ddd;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+
+
+
+#timeSlots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.time-btn {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: white;
+    border: 1px solid #444;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    border-radius: 30px; 
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.time-btn:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+    background-color: rgba(212, 175, 55, 0.05);
+}
+
+.time-btn.selected {
+    background-color: var(--accent-gold);
+    color: black;
+    border-color: var(--accent-gold);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    font-weight: bold;
+}
+
+.full-width-btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+
+
+
+
+@media (max-width: 900px) {
+    .modern-booking-container {
+        flex-direction: column;
+    }
+    .booking-info {
+        padding: 2.5rem;
+        text-align: center;
+    }
+    .perks-list {
+        display: none; 
+    }
+    .booking-form-area {
+        padding: 2.5rem;
+    }
+}

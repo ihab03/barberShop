@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Cuts</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Classic Cuts</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="admin.html"><i class="fa-solid fa-lock"></i> Admin</a></li>
+            <li><a href="book.html"><i class="fa-solid fa-calendar-check"></i> Book Now</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Look Sharp. Feel Confident.</h1>
+            <p>Premium grooming for the modern man. Walk in a mess, walk out a boss.</p>
+            <a href="book.html" class="cta-btn">Book Your Cut</a>
+        </div>
+    </header>
+
+   <section class="services-preview reveal" id="services"> <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card reveal"> <h3>The Classic Fade</h3>
+                <p>Clean, tight, and timeless.</p>
+                <span>$25</span>
+            </div>
+            <div class="card reveal"> <h3>Beard Trim & Line Up</h3>
+                <p>Hot towel and straight razor finish.</p>
+                <span>$15</span>
+            </div>
+            <div class="card reveal"> <h3>The Full Package</h3>
+                <p>Haircut, beard trim, and wash.</p>
+                <span>$35</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-text">
+            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">More Than Just a Haircut</h2>
+            <p style="line-height: 1.6; color: #ccc;">Founded in 2020, Classic Cuts was built on the belief that grooming is an essential part of a man's daily routine. Our master barbers blend old-school traditional techniques with modern styling. Sit back, grab a complimentary coffee, and let us elevate your style.</p>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <h2 style="color: var(--accent-gold);">Our Work</h2>
+        <p style="color: #ccc; margin-top: 0.5rem;">Check out some of our recent cuts.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item" style="background-image: url('./assets/Images/haircuts/1.png');"></div>
+            <div class="gallery-item" style="background-image: url('./assets/Images/haircuts/2.png');"></div>
+            <div class="gallery-item" style="background-image: url('./assets/Images/haircuts/3.png');"></div>
+        </div>
+    </section>
+
+
+    <section class="team-section" id="team">
+        <h2 style="color: var(--accent-gold); text-align: center;">Our Master Barbers</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="./assets/Images/barbers/barber1.jpg" alt="Mohammed">
+                <h3>Mohammed</h3>
+                <p>Specialty: Fades & Lineups</p>
+            </div>
+            <div class="team-member">
+                <img src="./assets/Images/barbers/barber2.png" alt="Murat">
+                <h3>Murat</h3>
+                <p>Specialty: Beard Sculpting</p>
+            </div>
+            <div class="team-member">
+                <img src="./assets/Images/barbers/barber3.jpg" alt="Mustafa">
+                <h3>Mustafa</h3>
+                <p>Specialty: Classic Scissors</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <h2 style="color: var(--accent-gold); text-align: center; margin-bottom: 2rem;">Client Reviews</h2>
+        <div class="carousel-container">
+            <button id="prevBtn" class="carousel-btn">&#10094;</button>
+            
+            <div class="testimonial-card">
+                <p id="reviewText" style="font-size: 1.2rem; font-style: italic; margin-bottom: 1rem;">"Best fade I've ever had, Mustafa is an absolute artist"</p>
+                <h4 id="reviewAuthor" style="color: var(--accent-gold);">- Ibrahim T.</h4>
+            </div>
+
+            <button id="nextBtn" class="carousel-btn">&#10095;</button>
+        </div>
+    </section>
+
+    
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 style="color: var(--accent-gold);">Classic Cuts</h3>
+                <p>Mahmutbey, Dilmenler Cd. No:26, 34217 Bağcilar/İstanbul</p>
+                <p>+90 535 580 80 82</p>
+            </div>
+            <div class="footer-col">
+                <h3 style="color: var(--accent-gold);">Hours</h3>
+                <p>Mon - Fri: 9:00 AM - 8:00 PM</p>
+                <p>Sat: 10:00 AM - 6:00 PM</p>
+                <p>Sun: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Classic Cuts Barbershop. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="./assets/js/script.js"></script>
+</body>
+</html>

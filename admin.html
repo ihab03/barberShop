@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Classic Cuts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Classic Cuts - Admin</div>
+        <ul class="nav-links">
+            <li><a href="index.html">View Live Site</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-wrapper">
+        
+        <header class="admin-header reveal">
+            <div>
+                <h2 class="text-gold mb-1">Overview</h2>
+                <p class="text-muted">Welcome back. Here is your schedule and shop performance.</p>
+            </div>
+            <button id="exportBtn" class="secondary-btn"><i class="fa-solid fa-download"></i> Export Schedule</button>
+        </header>
+
+        <div class="kpi-grid reveal">
+            <div class="kpi-card">
+                <div class="kpi-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <div class="kpi-info">
+                    <p>Total Bookings</p>
+                    <h3 id="kpiTotalBookings">0</h3>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon"><i class="fa-solid fa-scissors"></i></div>
+                <div class="kpi-info">
+                    <p>Active Barbers</p>
+                    <h3>3</h3>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="kpi-info">
+                    <p>Est. Revenue</p>
+                    <h3 id="kpiRevenue">$0</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container reveal">
+            <div class="table-header">
+                <h3 class="text-gold">Recent Appointments</h3>
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search clients...">
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table id="appointmentsTable">
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        </tbody>
+                </table>
+                <div id="emptyMessage" class="empty-state" style="display: none;">
+                    <i class="fa-regular fa-folder-open" style="font-size: 3rem; margin-bottom: 1rem; color: #444;"></i>
+                    <p>No appointments booked yet.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
 
-    // TESTIMONIAL CAROUSEL LOGIC
+
 
     const reviews = [
         { text: "Best fade I've ever had, Mustafa is an absolute artist", author: "Ibrahim  T." },
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // BOOKING PAGE LOGIC 
+
 
     const bookingForm = document.getElementById('bookingForm');
     
@@ -89,22 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        bookingForm.addEventListener('submit', function(e) {
+
+        bookingForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             if (!selectedTimeInput.value) {
-                if (typeof Swal !== 'undefined') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Hold up!',
-                        text: 'Please select a time slot for your appointment.',
-                        background: '#1e1e1e',
-                        color: '#ffffff',
-                        confirmButtonColor: '#d4af37'
-                    });
-                } else {
-                    alert('Please select a time slot for your appointment.');
-                }
+                Swal.fire({ icon: 'error', title: 'Hold up!', text: 'Please select a time slot.', background: '#1e1e1e', color: '#fff', confirmButtonColor: '#d4af37' });
                 return;
             }
 
@@ -115,26 +105,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 time: selectedTimeInput.value
             };
 
-            let bookings = JSON.parse(localStorage.getItem('barberBookings')) || [];
-            bookings.push(newBooking);
-            localStorage.setItem('barberBookings', JSON.stringify(bookings));
+            try {
+                await fetch('https://69f06310112e1b968e25b1cf.mockapi.io/bookings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newBooking)
+                });
 
-            if (typeof Swal !== 'undefined') {
                 Swal.fire({
                     icon: 'success',
                     title: 'Booking Confirmed!',
-                    text: `You're locked in, ${newBooking.name}. See you on ${newBooking.date} at ${newBooking.time}.`,
+                    text: `You're locked in, ${newBooking.name}.`,
                     background: '#1e1e1e',
-                    color: '#ffffff',
+                    color: '#fff',
                     confirmButtonColor: '#d4af37'
                 }).then(() => {
                     bookingForm.reset();
                     timeSelection.style.display = 'none';
                 });
-            } else {
-                alert(`Booking Confirmed! See you on ${newBooking.date} at ${newBooking.time}.`);
-                bookingForm.reset();
-                timeSelection.style.display = 'none';
+
+            } catch (error) {
+                console.error("Database Error:", error);
+                alert("Failed to save booking to the database.");
             }
         });
     }
